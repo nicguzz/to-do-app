@@ -1,25 +1,41 @@
 <template>
-  <div>
-    <div>New Task Component</div>
-    <label for="newTaskTitle">{{ taskTitle }}</label
-    ><br />
-    <input
-      v-model="taskTitle"
-      type="text"
-      id="newTaskTitle"
-      placeholder="Task's title"
-    /><br />
-    <label for="newTaskDesc">Task's Description</label><br />
-    <input
-      v-model="taskDesc"
-      type="text"
-      id="newTaskDesc"
-      placeholder="Task's description"
-    /><br />
-    <button @click.prevent="onInput">Upload</button>
-  </div>
-  <div>
-    <h3 v-if="errorBool">{{ emptyString }}</h3>
+  <div class="taskcreator-area">
+    <div class="taskcreator-container">
+      <div class="flex justify-between py-1">
+        <h3 class="text-m">New Iron Task</h3>
+      </div>
+      <div class="text-sm mt-2">
+        <div
+          class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+        >
+          <input
+            v-model="taskTitle"
+            type="text"
+            id="newTaskTitle"
+            placeholder="Task's title"
+          />
+        </div>
+
+        <div
+          class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+        >
+          <input
+            v-model="taskDesc"
+            type="text"
+            id="newTaskDesc"
+            placeholder="Task's description"
+          />
+
+          <div
+            class="text-grey-darker mt-2 ml-2 flex justify-between items-start"
+          ></div>
+        </div>
+        <button @click.prevent="onInput">Add</button>
+      </div>
+      <div>
+        <h3 v-if="errorBool">{{ emptyString }}</h3>
+      </div>
+    </div>
   </div>
 </template>
 

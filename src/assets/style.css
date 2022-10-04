@@ -21,7 +21,7 @@
 }
 
 .signin-email-label {
-  @apply mb-1 text-xs tracking-wide text-gray-600;
+  @apply mb-1 text-xs  sm:text-sm tracking-wide text-gray-600;
 }
 
 .signin-email {
@@ -63,4 +63,16 @@
   width: 200px;
   height: 200px;
   background-repeat: no-repeat;
+}
+
+.atodoapp-desc {
+  @apply font-medium self-center text-sm sm:text-xl text-gray-600;
+}
+
+.taskcreator-area {
+  @apply w-full p-8 flex justify-center font-sans;
+}
+
+.taskcreator-container {
+  @apply rounded  w-3/6  p-2 bg-yellow-100;
 }

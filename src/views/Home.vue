@@ -1,6 +1,4 @@
 <template>
-  <div>You have signed up!</div>
-  <h2>Create task</h2>
   <NewTask @childNewTask="sendToStore" />
   <TaskItem v-for="(task, index) in taskArray" :key="index" :taskData="task" />
 </template>

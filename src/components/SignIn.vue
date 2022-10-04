@@ -1,6 +1,6 @@
 <template>
   <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
-  <Ironcheck />
+  <IroncheckLogo />
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
   </p>
@@ -108,7 +108,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-import Ironcheck from "./Ironcheck.vue";
+import IroncheckLogo from "./IroncheckLogo.vue";
 
 // Route Variables
 const route = "/auth/sign-up";
@@ -121,7 +121,7 @@ const password = ref("");
 // Error Message
 const errorMsg = ref("");
 
-//Show hide password variables
+// //Show hide password variables
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );

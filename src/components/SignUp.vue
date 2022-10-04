@@ -1,5 +1,5 @@
 <template>
-  <Ironcheck />
+  <IroncheckLogo />
 
   <div class="signin-center">
     <div class="signup-container">
@@ -118,7 +118,7 @@ import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
-import Ironcheck from "./Ironcheck.vue";
+import IroncheckLogo from "./IroncheckLogo.vue";
 // Route Variables
 const route = "/auth/login";
 const buttonText = "Sign in here";
