@@ -5,8 +5,7 @@
 /* My Css */
 
 .signin-center {
-  display: flex;
-  justify-content: center;
+  @apply flex justify-center;
 }
 
 .signin-container {
@@ -42,9 +41,26 @@
 }
 
 .register-now {
-  @apply ml-2 inline-flex items-center text-gray-700 font-medium text-xs text-center;
+  @apply ml-0 inline-flex items-center text-gray-700 font-medium text-xs text-center;
+}
+
+.register-now-text:hover {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .signup-container {
   @apply flex flex-col opacity-80 shadow-2xl bg-blue-300  px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md;
+}
+
+.image-container {
+  @apply h-80 flex items-center justify-center flex-col;
+}
+
+.todoapp-image {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
 }

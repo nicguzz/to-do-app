@@ -1,6 +1,6 @@
 <template>
   <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
-
+  <Ironcheck />
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
   </p>
@@ -39,11 +39,30 @@
                 class="signin-password"
                 placeholder="Enter your password"
               />
-              <span class="">
-                <EyeIcon
-                  :class="[passwordFieldIcon]"
-                  @click.prevent="hidePassword = !hidePassword"
-                />
+              <span
+                class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  class=""
+                  @click="hidePassword = !hidePassword"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
+                </svg>
               </span>
             </div>
           </div>
@@ -70,7 +89,11 @@
         <span class="register-now"
           >You don't have an account?
           <p class="text-xs ml-2 text-blue-500 font-semibold">
-            <PersonalRouter :route="route" :buttonText="buttonText" />
+            <PersonalRouter
+              :route="route"
+              :buttonText="buttonText"
+              class="register-now-text"
+            />
           </p>
         </span>
       </div>
@@ -85,6 +108,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import Ironcheck from "./Ironcheck.vue";
 
 // Route Variables
 const route = "/auth/sign-up";
