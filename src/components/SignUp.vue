@@ -1,5 +1,6 @@
 <template>
   <div>Sign Up</div>
+  <h1 class="nicsH1">Hello world!</h1>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <p>Good Music, Patience and a lot effort</p>
   <p>Keep calm and code on!</p>

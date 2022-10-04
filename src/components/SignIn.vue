@@ -1,50 +1,81 @@
 <template>
-  <div>Sign In</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
+  <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
+
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
   </p>
-  <form @submit.prevent="signIn">
-    <div class="">
-      <label class="" for="">Email</label>
-      <input
-        class=""
-        type="email"
-        placeholder="dave@wuTangfinancial.com"
-        v-model="email"
-        id="email"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="" for="">Password</label>
+  <div class="signin-center">
+    <div class="signin-container">
+      <div class="signin">Sign in</div>
+      <div class="signin-credentials">
+        Enter your credentials to access your account
+      </div>
 
-      <div class="">
-        <input
-          class=""
-          :type="passwordFieldType"
-          onpaste="return false"
-          placeholder="************"
-          v-model="password"
-          id="password"
-        />
-        <span class="">
-          <EyeIcon
-            :class="[passwordFieldIcon]"
-            @click.prevent="hidePassword = !hidePassword"
-          />
+      <div class="mt-10">
+        <form action="#" @submit.prevent="signIn">
+          <div class="flex flex-col mb-5">
+            <label for="email" class="signin-email-label">email @:</label>
+            <div class="relative">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                v-model="email"
+                class="signin-email"
+                placeholder="Enter your email address"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col mb-6">
+            <label for="password" class="signin-password-label"
+              >password:</label
+            >
+            <div class="relative">
+              <input
+                :type="passwordFieldType"
+                onpaste="return false"
+                v-model="password"
+                id="password"
+                class="signin-password"
+                placeholder="Enter your password"
+              />
+              <span class="">
+                <EyeIcon
+                  :class="[passwordFieldIcon]"
+                  @click.prevent="hidePassword = !hidePassword"
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="flex w-full">
+            <button type="submit" class="submit-button">
+              <span class="mr-2 uppercase">Sign in</span>
+              <span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                ></svg>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="flex justify-center items-center mt-6">
+        <span class="register-now"
+          >You don't have an account?
+          <p class="text-xs ml-2 text-blue-500 font-semibold">
+            <PersonalRouter :route="route" :buttonText="buttonText" />
+          </p>
         </span>
       </div>
     </div>
-
-    <button class="" type="submit">Sign In</button>
-    <p class="">
-      <span class="">Don’t have an account? </span>
-
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-    </p>
-  </form>
+  </div>
 </template>
 
 <script setup>
@@ -57,7 +88,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Register now";
 
 // Input Fields
 const email = ref("");

@@ -1,8 +1,65 @@
 <template>
-  <div>New Task Component</div>
+  <div>
+    <div>New Task Component</div>
+    <label for="newTaskTitle">{{ taskTitle }}</label
+    ><br />
+    <input
+      v-model="taskTitle"
+      type="text"
+      id="newTaskTitle"
+      placeholder="Task's title"
+    /><br />
+    <label for="newTaskDesc">Task's Description</label><br />
+    <input
+      v-model="taskDesc"
+      type="text"
+      id="newTaskDesc"
+      placeholder="Task's description"
+    /><br />
+    <button @click.prevent="onInput">Upload</button>
+  </div>
+  <div>
+    <h3 v-if="errorBool">{{ emptyString }}</h3>
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { supabase } from "../supabase";
+import { useTaskStore } from "../stores/task.js";
+
+const emit = defineEmits(["childNewTask"]);
+let taskTitle = ref("");
+let taskDesc = ref("");
+let errorBool = ref(false);
+const emptyString = ref("");
+
+function onInput() {
+  if (taskTitle.value === "") {
+    errorBool.value = true;
+    emptyString.value = "Title is required.";
+    setTimeout(() => {
+      errorBool.value = false; //? dont get it
+    }, 1000);
+  } else {
+    emit("childNewTask", taskTitle.value, taskDesc.value); // ? dont get it
+    taskTitle.value = "";
+    taskDesc.value = "";
+    console.log(taskTitle.value);
+  }
+}
+
+// async function uploadTask() {
+//   const { data, error } = await supabase.from("tasks").insert([
+//     {
+//       user_id: "5fa3d22c-892b-44fc-a3a6-efc7e5503032",
+//       title: taskTitle.value,
+//       description: taskDesc.value,
+//       is_complete: false,
+//     },
+//   ]);
+// }
+
 // constant to save a variable that define the custom event that will be emitted to the homeView
 
 // constant to save a variable that holds the value of the title input field of the new task
