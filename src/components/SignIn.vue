@@ -124,28 +124,4 @@ const signIn = async () => {
 };
 </script>
 
-<style>
-.wu-text {
-  color: black;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-.input {
-  color: black;
-  margin-bottom: 1rem;
-}
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-</style>
+<style></style>
