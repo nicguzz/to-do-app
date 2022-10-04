@@ -41,7 +41,7 @@ npm run build
 
 ### To Do App
 
-**Oct 4**
+## **Oct 4**
 
 _Done:_
 Sign in and Sign up section box implemented. Background image too.
