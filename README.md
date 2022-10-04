@@ -44,5 +44,7 @@ npm run build
 ## **Oct 4**
 
 _Done:_
-Sign in and Sign up section box implemented. Background image too.
-EyeIcon implemented but might need some improvements(shorter code)
+
+- Sign in and Sign up section box implemented.
+- Background image too.
+- EyeIcon implemented but might need some improvements(shorter code)
