@@ -48,3 +48,12 @@ _Done:_
 - Sign in and Sign up section box implemented.
 - Background image too.
 - EyeIcon implemented but might need some improvements(shorter code)
+
+## **Oct 5**
+
+_Done:_
+
+- Add task
+- Edit task
+- Complete task
+- Logout button working
