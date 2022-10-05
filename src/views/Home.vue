@@ -8,7 +8,7 @@
       :taskData="task"
       @editChild="editFather"
       @deleteChild="deleteId"
-      @emitItemComplete="changeComplete"
+      @emitItemComplete="changeToCompleted"
     />
   </div>
 </template>
@@ -49,10 +49,9 @@ async function deleteId(idTask) {
   readFromStore();
 }
 
-async function changeComplete(task) {
+async function changeToCompleted(task) {
   let booleanChange = !task.is_complete;
   let taskID = task.id;
-  console.log(booleanChange);
   await taskStore.completeTask(taskID, booleanChange);
   readFromStore();
 }

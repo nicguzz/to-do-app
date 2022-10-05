@@ -33,7 +33,7 @@ export const useTaskStore = defineStore("tasks", {
       const { data, error } = await supabase
         .from("tasks")
         .update({ title: title, description: description })
-        .match({ id: id });
+        .match({ id: id }); //match to find the id in the database so the changes above can be applied to a specific user
     },
     async deleteTask(id) {
       const { data, error } = await supabase
@@ -42,6 +42,7 @@ export const useTaskStore = defineStore("tasks", {
         .match({ id: id });
     },
     async completeTask(id, completeStatus) {
+      // This function is used in the function changeComplete(Home.vue) to complete the task in the database.
       const { data, error } = await supabase
         .from("tasks")
         .update({
