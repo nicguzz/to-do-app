@@ -1,14 +1,80 @@
 <template>
-  <div>Task Item Component</div>
-  <p>{{ taskData.title }}</p>
-  <p>{{ taskData.description }}</p>
+  <div class="tasks-area">
+    <div class="tasks-container">
+      <div class="flex justify-between py-1">
+        <h3 class="text-m">{{ taskData.title }}</h3>
+      </div>
+      <div class="flex justify-between py-1">
+        {{ taskData.description }}
+      </div>
+
+      <div class="task-editdelete">
+        <button @click="toggleEdit">Edit</button>
+        <button @click="deleteTask">Delete</button>
+        <button @click="completeItem">Completed</button>
+      </div>
+      <div v-if="editInput">
+        <input type="text" v-model="editTitle" />
+        <input type="text" v-model="editDescription" />
+        <button @click="edit">Apply</button>
+        <h1 v-if="errorContainer">{{ errorMessage }}</h1>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
+import { ref } from "vue";
+// BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
+let editInput = ref(false);
 
+// VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
+let editTitle = ref("");
+let editDescription = ref("");
+// FUNCTION THAT TOGGLES THE VISIBILITY OF THE INPUT
+
+function toggleEdit() {
+  editInput.value = !editInput.value;
+  editTitle.value = props.taskData.title;
+  editDescription.value = props.taskData.description;
+}
+
+let errorMessage = ref("");
+let errorContainer = ref(false);
+
+function errorhandling() {
+  errorContainer.value = !errorContainer.value;
+  errorMessage.value = "It cant be empty";
+}
+
+function edit() {
+  if (editTitle.value === "") {
+    errorhandling();
+  } else {
+    editInput.value = !editInput.value;
+    errorContainer.value = !errorContainer.value;
+    let oldToNew = {
+      id: props.taskData.id,
+      title: editTitle.value,
+      description: editDescription.value,
+    };
+    console.log(oldToNew);
+    emit("editChild", oldToNew);
+  }
+}
+
+function deleteTask() {
+  let deleteId = props.taskData.id;
+  emit("deleteChild", props.taskData);
+  console.log(props.taskData);
+  console.log(props.taskData.id);
+}
+
+function completeItem() {
+  emit("emitItemComplete", props.taskData);
+}
+
+const emit = defineEmits(["editChild", "deleteChild"]);
 const props = defineProps(["taskData"]);
 </script>
 

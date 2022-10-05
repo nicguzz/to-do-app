@@ -55,10 +55,10 @@ function onInput() {
     errorBool.value = true;
     emptyString.value = "Title is required.";
     setTimeout(() => {
-      errorBool.value = false; //? dont get it
+      errorBool.value = false;
     }, 1000);
   } else {
-    emit("childNewTask", taskTitle.value, taskDesc.value); // ? dont get it
+    emit("childNewTask", taskTitle.value, taskDesc.value);
     taskTitle.value = "";
     taskDesc.value = "";
     console.log(taskTitle.value);

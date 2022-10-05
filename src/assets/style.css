@@ -76,3 +76,23 @@
 .taskcreator-container {
   @apply rounded  w-3/6  p-2 bg-yellow-100;
 }
+
+.tasks-container {
+  @apply rounded  w-full  p-2 bg-yellow-100;
+}
+
+.tasks {
+  @apply flex flex-row  justify-center mx-40 gap-2;
+}
+
+.tasks2 {
+  @apply grid grid-cols-1 md:lg:xl:grid-cols-3;
+}
+
+.tasks-area {
+  @apply w-full;
+}
+
+.task-editdelete {
+  @apply flex flex-row justify-evenly;
+}

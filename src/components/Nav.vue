@@ -1,8 +1,19 @@
 <template>
   <div>Nav Component</div>
+  <p @click="signout">Log Out</p>
 </template>
 
 <script setup>
+import { useUserStore } from "../stores/user.js";
+import { useRouter } from "vue-router";
+const redirect = useRouter();
+const userStore = useUserStore();
+
+async function signout() {
+  await userStore.signOut();
+  redirect.push({ path: "/auth/login" });
+}
+
 //constant to save a variable that will hold the use router method
 
 // constant to save a variable that will get the user from store with a computed function imported from vue

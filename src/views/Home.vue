@@ -1,6 +1,16 @@
 <template>
+  <Nav />
   <NewTask @childNewTask="sendToStore" />
-  <TaskItem v-for="(task, index) in taskArray" :key="index" :taskData="task" />
+  <div class="tasks">
+    <TaskItem
+      v-for="(task, index) in taskArray"
+      :key="index"
+      :taskData="task"
+      @editChild="editFather"
+      @deleteChild="deleteId"
+      @emitItemComplete="changeComplete"
+    />
+  </div>
 </template>
 
 <script setup>
@@ -8,6 +18,9 @@ import NewTask from "@/components/NewTask.vue";
 import { useTaskStore } from "../stores/task.js";
 import TaskItem from "../components/TaskItem.vue";
 import { ref } from "vue";
+import { supabase } from "../supabase";
+import Nav from "../components/Nav.vue";
+
 // nos definimos la tienda del usuario dentro de una constante
 const taskStore = useTaskStore();
 // Inicializamos array de tareas
@@ -18,16 +31,31 @@ async function readFromStore() {
 }
 
 readFromStore();
-
+// console.log(taskArray);
 // Enviamos los datos de la tarea a la Tienda taskStore
 async function sendToStore(title, description) {
   await taskStore.addTask(title, description);
   readFromStore();
 }
-// async function readAll() {
-//   let { data: tasks, error } = await supabase.from("tasks").select("*");
-// }
-// readAll();
+
+async function editFather(task) {
+  await taskStore.editTask(task.id, task.title, task.description);
+  readFromStore();
+}
+
+async function deleteId(idTask) {
+  console.log(idTask.id);
+  await taskStore.deleteTask(idTask.id);
+  readFromStore();
+}
+
+async function changeComplete(task) {
+  let booleanChange = !task.is_complete;
+  let taskID = task.id;
+  console.log(booleanChange);
+  await taskStore.completeTask(taskID, booleanChange);
+  readFromStore();
+}
 </script>
 <style>
 body {

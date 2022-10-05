@@ -13,6 +13,7 @@ export const useTaskStore = defineStore("tasks", {
         .select("*")
         .order("id", { ascending: false });
       this.tasks = tasks;
+      // console.log(tasks);
       return this.tasks;
     },
     // New code
@@ -26,6 +27,27 @@ export const useTaskStore = defineStore("tasks", {
           description: description,
         },
       ]);
+    },
+    async editTask(id, title, description) {
+      console.log(useUserStore().user.id);
+      const { data, error } = await supabase
+        .from("tasks")
+        .update({ title: title, description: description })
+        .match({ id: id });
+    },
+    async deleteTask(id) {
+      const { data, error } = await supabase
+        .from("tasks")
+        .delete()
+        .match({ id: id });
+    },
+    async completeTask(id, completeStatus) {
+      const { data, error } = await supabase
+        .from("tasks")
+        .update({
+          is_complete: completeStatus,
+        })
+        .match({ id: id });
     },
   },
 });
