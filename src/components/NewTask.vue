@@ -19,12 +19,12 @@
         <div
           class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
         >
-          <input
+          <textarea
             v-model="taskDesc"
             type="text"
             id="newTaskDesc"
             placeholder="Task's description"
-          />
+          ></textarea>
         </div>
         <button class="add-button" @click.prevent="onInput">
           <svg
@@ -41,6 +41,7 @@
               d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
+          Add
         </button>
       </div>
       <div>
