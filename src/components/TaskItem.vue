@@ -12,25 +12,24 @@
       </div>
 
       <div class="task-editdelete">
-        <div class="task-completed">
-          <button v-if="isComplete" class="task-red" @click="recoverItem">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-
-          <button v-else @click="completeItem" class="task-green">
+        <button v-if="isComplete" class="task-red" @click.prevent="recoverItem">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div v-else class="edit-done-container">
+          <button @click.prevent="completeItem" class="task-green">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -46,9 +45,8 @@
               />
             </svg>
           </button>
-        </div>
-        <div class="task-edit">
-          <button @click="toggleEdit">
+
+          <button @click.prevent="toggleEdit" class="task-edit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -65,6 +63,7 @@
             </svg>
           </button>
         </div>
+
         <div class="task-delete">
           <button @click="deleteTask">
             <svg

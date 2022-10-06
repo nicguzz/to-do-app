@@ -57,3 +57,12 @@ _Done:_
 - Edit task
 - Complete task
 - Logout button working
+
+## **Oct 6**
+
+_Done:_
+
+- Added function to revert a completed task to incomplete
+- Navbar done
+- Footer Done
+- Some fixes to be made

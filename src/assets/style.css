@@ -201,9 +201,6 @@ body {
   font-size: 0.6rem;
 }
 
-/* .apply-edit {
-  @apply bg-blue-300 text-white mt-2 rounded-sm w-12 shadow-xl;
+.edit-done-container {
+  @apply flex;
 }
-
-.edit-container {
-} */
