@@ -1,5 +1,6 @@
 <template>
   <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
+
   <IroncheckLogo />
   <p v-if="errorMsg" class="">
     {{ errorMsg }}
@@ -148,4 +149,10 @@ const signIn = async () => {
 };
 </script>
 
-<style></style>
+<style>
+/* body {
+  background-image: url("../assets/sticknotes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+</style>

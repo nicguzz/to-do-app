@@ -4,6 +4,9 @@
 
 /* My Css */
 
+body {
+}
+
 .signin-center {
   @apply flex justify-center;
 }
@@ -65,6 +68,14 @@
   background-repeat: no-repeat;
 }
 
+.todoapp-image-mini {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+}
+
 .atodoapp-desc {
   @apply font-medium self-center text-sm sm:text-xl text-gray-600;
 }
@@ -95,4 +106,40 @@
 
 .task-editdelete {
   @apply flex flex-row justify-evenly;
+}
+
+.footer-area {
+  @apply bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100;
+}
+
+.footer-container {
+  @apply max-w-screen-xl mt-20 px-4 py-2 flex flex-col items-center;
+}
+
+.github-web {
+  @apply flex mt-2 space-x-6 text-gray-600;
+}
+
+.rights-reserved {
+  @apply text-xs text-gray-800 mt-4 flex flex-row-reverse;
+}
+
+.nav-container {
+  @apply w-full z-30 top-10 py-1 bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 shadow-lg border-b border-blue-400;
+}
+
+.navbox {
+  @apply w-full flex items-center justify-between mt-0 px-6 py-2;
+}
+
+.todoapp-image-nav {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+.ironcheck-nav {
+  @apply flex flex-row gap-3;
 }
