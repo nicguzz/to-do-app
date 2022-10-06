@@ -204,3 +204,14 @@ body {
 .edit-done-container {
   @apply flex;
 }
+
+#newTaskDesc {
+  width: 100%;
+  height: 100px;
+  text-align: start;
+}
+
+#newTaskTitle {
+  width: 100%;
+  text-align: start;
+}

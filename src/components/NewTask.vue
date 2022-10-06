@@ -25,10 +25,6 @@
             id="newTaskDesc"
             placeholder="Task's description"
           />
-
-          <div
-            class="text-grey-darker mt-2 ml-2 flex justify-between items-start"
-          ></div>
         </div>
         <button class="add-button" @click.prevent="onInput">
           <svg
