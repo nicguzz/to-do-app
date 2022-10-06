@@ -149,10 +149,4 @@ const signIn = async () => {
 };
 </script>
 
-<style>
-/* body {
-  background-image: url("../assets/sticknotes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-</style>
+<style></style>

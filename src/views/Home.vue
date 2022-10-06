@@ -9,6 +9,7 @@
       @editChild="editFather"
       @deleteChild="deleteId"
       @emitItemComplete="changeToCompleted"
+      @emitRecoverItem="changeToIncomplete"
     />
   </div>
   <Footer />
@@ -57,5 +58,18 @@ async function changeToCompleted(task) {
   await taskStore.completeTask(taskID, booleanChange);
   readFromStore();
 }
+
+async function changeToIncomplete(task) {
+  let booleanChange = !task.is_complete;
+  let taskID = task.id;
+  await taskStore.completeTask(taskID, booleanChange);
+  readFromStore();
+}
 </script>
-<style></style>
+<style>
+body {
+  background-image: url("../assets/sticknotes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>

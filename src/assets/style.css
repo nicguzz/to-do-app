@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 /* My Css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
 
 body {
 }
-
 .signin-center {
   @apply flex justify-center;
 }
@@ -143,3 +143,67 @@ body {
 .ironcheck-nav {
   @apply flex flex-row gap-3;
 }
+
+.errormsg {
+  color: red;
+  font-weight: 600;
+}
+
+.task-completed {
+  @apply rounded-lg flex flex-row items-center shadow-lg;
+}
+
+.task-completed:hover {
+  @apply text-white;
+}
+
+.task-edit {
+  @apply rounded-lg flex flex-col items-center bg-blue-200 shadow-lg
+  font-mono;
+}
+
+.task-edit:hover {
+  @apply bg-blue-300 text-white;
+}
+
+.task-delete {
+  @apply rounded-lg flex flex-row bg-red-300 shadow-lg font-mono;
+}
+.task-delete:hover {
+  @apply bg-red-400 text-white;
+}
+
+.task-red {
+  @apply bg-red-400 rounded-lg shadow-lg;
+}
+
+.task-red:hover {
+  @apply text-white bg-red-500;
+}
+
+.task-green {
+  @apply bg-green-400 rounded-lg shadow-lg;
+}
+
+.task-green:hover {
+  @apply text-white bg-green-500;
+}
+
+.add-button {
+  @apply rounded-lg flex flex-row bg-blue-500 shadow-lg items-center mt-2 h-10 w-10 justify-center;
+}
+
+.add-button:hover {
+  @apply text-white bg-blue-600;
+}
+
+.tasks-td {
+  font-size: 0.6rem;
+}
+
+/* .apply-edit {
+  @apply bg-blue-300 text-white mt-2 rounded-sm w-12 shadow-xl;
+}
+
+.edit-container {
+} */
