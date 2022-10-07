@@ -1,18 +1,21 @@
 <template>
-  <Nav />
-  <NewTask @childNewTask="sendToStore" />
-  <div class="tasks">
-    <TaskItem
-      v-for="(task, index) in taskArray"
-      :key="index"
-      :taskData="task"
-      @editChild="editFather"
-      @deleteChild="deleteId"
-      @emitItemComplete="changeToCompleted"
-      @emitRecoverItem="changeToIncomplete"
-    />
+  <div class="relative min-h-screen">
+    <Nav />
+    <NewTask @childNewTask="sendToStore" />
+    <div class="tasks min-h-full md:1/3 w-full">
+      <TaskItem
+        v-for="(task, index) in taskArray"
+        :key="index"
+        :taskData="task"
+        @editChild="editFather"
+        @deleteChild="deleteId"
+        @emitItemComplete="changeToCompleted"
+        @emitRecoverItem="changeToIncomplete"
+        @superCoolEmit="changeToIncomplete"
+      />
+    </div>
+    <Footer class="absolute w-full bottom-0" />
   </div>
-  <Footer />
 </template>
 
 <script setup>
