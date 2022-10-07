@@ -3,6 +3,7 @@
     <div class="footer-container">
       <p class="todoapp-image-mini"></p>
       <p class="max-w-xs mt-2 text-xl text-gray-600">Iron cHeck</p>
+
       <div class="github-web">
         <a
           class="hover:opacity-75"
@@ -44,7 +45,3 @@
     </div>
   </footer>
 </template>
-
-<script setup></script>
-
-<style></style>

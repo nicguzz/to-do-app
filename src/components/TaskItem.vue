@@ -12,23 +12,32 @@
       </div>
 
       <div class="task-editdelete">
-        <button v-if="isComplete" class="task-red" @click.prevent="recoverItem">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-        <div v-else class="edit-done-container">
+        <div
+          v-if="isComplete"
+          @click="$emit('superCoolEmit', (isComplete = !isComplete))"
+        >
+          RECOVER
+        </div>
+        <div v-if="!isComplete" @click="isComplete = !isComplete">COMPLETE</div>
+        <div v-if="isComplete === true">
+          <button class="task-red" @click="recoverItem">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+              />
+            </svg>
+          </button>
+        </div>
+        <div v-if="isComplete === false" class="edit-done-container">
           <button @click.prevent="completeItem" class="task-green">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +54,6 @@
               />
             </svg>
           </button>
-
           <button @click.prevent="toggleEdit" class="task-edit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +93,12 @@
       </div>
       <div v-if="editInput" class="editinput">
         <div class="editinput-text">
-          <input type="text" v-model="editTitle" />
-          <input id="editdescription" type="text" v-model="editDescription" />
+          <input type="text" v-model="editTitle" id="edittitle" />
+          <textarea
+            id="editdescription"
+            type="text"
+            v-model="editDescription"
+          ></textarea>
         </div>
 
         <button @click="edit" class="apply-edit">Apply</button>
@@ -105,6 +117,7 @@ let editInput = ref(false);
 let editTitle = ref("");
 let editDescription = ref("");
 let isComplete = props.taskData.is_complete;
+console.log(isComplete);
 
 // FUNCTION THAT TOGGLES THE VISIBILITY OF THE INPUT
 
@@ -143,20 +156,34 @@ function edit() {
 function deleteTask() {
   emit("deleteChild", props.taskData); // function using an emit("deleteChild") to carry props.taskData to be used in Home.vue(@deleteChild="deleteId") and later use function deleteId to store to database
 }
+let test = ref(false);
 
 function completeItem() {
   //This function issues an emit of the html query to be used in Home.vue with a new function changeToCompleted @emitItemComplete="changeToCompleted"
 
   emit("emitItemComplete", props.taskData);
+  isComplete = !isComplete;
+  test.value = !test.value;
+  console.log(`value of test is ${test.value}`);
+  console.log(`value of complete is ${isComplete}`);
 }
 
 function recoverItem() {
   //
 
   emit("emitRecoverItem", props.taskData);
+  isComplete = !isComplete;
+  test.value = !test.value;
+  console.log(`value of test recover is ${test.value}`);
+  console.log(`value of complete recover is ${isComplete}`);
 }
 
-const emit = defineEmits(["editChild", "deleteChild"]);
+const emit = defineEmits([
+  "editChild",
+  "deleteChild",
+  "emitRecoverItem",
+  "emitItemComplete",
+]);
 const props = defineProps(["taskData"]);
 </script>
 

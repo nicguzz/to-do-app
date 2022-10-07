@@ -1,25 +1,28 @@
 <template>
-  <Nav />
-  <NewTask @childNewTask="sendToStore" />
-  <div class="tasks">
-    <TaskItem
-      v-for="(task, index) in taskArray"
-      :key="index"
-      :taskData="task"
-      @editChild="editFather"
-      @deleteChild="deleteId"
-      @emitItemComplete="changeToCompleted"
-      @emitRecoverItem="changeToIncomplete"
-    />
+  <div class="relative min-h-screen">
+    <Nav />
+    <NewTask @childNewTask="sendToStore" />
+    <div class="tasks min-h-full md:1/3 w-full">
+      <TaskItem
+        v-for="(task, index) in taskArray"
+        :key="index"
+        :taskData="task"
+        @editChild="editFather"
+        @deleteChild="deleteId"
+        @emitItemComplete="changeToCompleted"
+        @emitRecoverItem="changeToIncomplete"
+        @superCoolEmit="changeToIncomplete"
+      />
+    </div>
+    <Footer class="absolute w-full bottom-0" />
   </div>
-  <Footer />
 </template>
 
 <script setup>
 import NewTask from "@/components/NewTask.vue";
 import { useTaskStore } from "../stores/task.js";
 import TaskItem from "../components/TaskItem.vue";
-import { ref } from "vue";
+import { onUpdated, ref } from "vue";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
@@ -65,11 +68,9 @@ async function changeToIncomplete(task) {
   await taskStore.completeTask(taskID, booleanChange);
   readFromStore();
 }
+
+onUpdated(() => {
+  readFromStore();
+});
 </script>
-<style>
-body {
-  background-image: url("../assets/sticknotes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>
+<style scoped></style>

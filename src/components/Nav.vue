@@ -5,11 +5,12 @@
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
       </label>
       <input class="hidden" type="checkbox" id="menu-toggle" />
-      <nav class="ironcheck-nav">
-        <p class="todoapp-image-nav"></p>
-        <p class="max-w-xs mt-2 text-xl text-gray-600">Iron cHeck</p>
-      </nav>
-
+      <a href="">
+        <nav class="ironcheck-nav">
+          <p class="todoapp-image-nav"></p>
+          <p class="max-w-xs mt-2 text-xl text-gray-600">Iron cHeck</p>
+        </nav>
+      </a>
       <div
         class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4"
         id="nav-content"
