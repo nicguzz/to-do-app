@@ -83,9 +83,12 @@
           </button>
         </div>
       </div>
-      <div v-if="editInput">
-        <input type="text" v-model="editTitle" />
-        <input type="text" v-model="editDescription" />
+      <div v-if="editInput" class="editinput">
+        <div class="editinput-text">
+          <input type="text" v-model="editTitle" />
+          <input id="editdescription" type="text" v-model="editDescription" />
+        </div>
+
         <button @click="edit" class="apply-edit">Apply</button>
         <h1 v-if="errorContainer">{{ errorMessage }}</h1>
       </div>
