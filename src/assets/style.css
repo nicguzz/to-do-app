@@ -173,7 +173,7 @@ body {
   @apply rounded-lg flex flex-row bg-red-300 shadow-lg font-mono;
 }
 .task-delete:hover {
-  @apply bg-red-600 text-white;
+  @apply bg-red-400 text-white;
 }
 
 .task-red {
@@ -226,11 +226,4 @@ body {
 
 .apply-edit {
   @apply bg-blue-500 border mt-2 px-2 text-white rounded-md;
-}
-
-#edittitle {
-  @apply w-full border rounded-lg;
-}
-#editdescription {
-  @apply w-full border rounded-lg;
 }
