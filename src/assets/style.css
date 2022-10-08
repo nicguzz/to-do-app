@@ -175,7 +175,7 @@ body {
 }
 
 .task-delete {
-  @apply rounded-lg flex flex-row bg-red-300 shadow-lg font-mono;
+  @apply rounded-lg flex flex-row justify-center bg-red-300 shadow-lg;
 }
 .task-delete:hover {
   @apply bg-red-600 text-white;
