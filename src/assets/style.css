@@ -166,7 +166,7 @@ body {
 }
 
 .task-edit {
-  @apply rounded-lg flex flex-col items-center bg-blue-200 shadow-lg
+  @apply rounded-lg w-20  bg-blue-200 shadow-lg
   font-mono;
 }
 
@@ -175,7 +175,7 @@ body {
 }
 
 .task-delete {
-  @apply rounded-lg flex flex-row justify-center bg-red-300 shadow-lg;
+  @apply rounded-lg bg-red-300 shadow-lg;
 }
 .task-delete:hover {
   @apply bg-red-600 text-white;
@@ -190,7 +190,7 @@ body {
 }
 
 .task-green {
-  @apply bg-green-400 rounded-lg shadow-lg;
+  @apply bg-green-400  w-20 rounded-lg shadow-lg;
 }
 
 .task-green:hover {

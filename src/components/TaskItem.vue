@@ -25,7 +25,7 @@
         </button>
 
         <button @click.prevent="toggleEdit" class="task-edit">
-          <i class="fa-solid fa-pen-to-square fa-lg"></i>
+          <i class="fa-regular fa-pen-to-square fa-lg"></i>
         </button>
         <button @click="deleteTask" class="task-delete w-20">
           <i class="fa-regular fa-trash-can fa-lg"></i>
