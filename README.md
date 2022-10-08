@@ -66,3 +66,11 @@ _Done:_
 - Navbar done
 - Footer Done
 - Some fixes to be made
+
+## **Oct 7**
+
+_Done:_
+
+- Footer fixed
+- Minor fixes in Task Complete/Edit/Delete Icons
+- When clicking to complete task, it doesnt change to completed task automatically, this is an important issue.
