@@ -2,7 +2,7 @@
   <div class="relative min-h-screen">
     <Nav />
     <NewTask @childNewTask="sendToStore" />
-    <div class="tasks min-h-full md:1/3 w-full">
+    <div class="tasks">
       <TaskItem
         v-for="(task, index) in taskArray"
         :key="index"
@@ -14,7 +14,7 @@
         @superCoolEmit="changeToIncomplete"
       />
     </div>
-    <Footer class="absolute w-full bottom-0" />
+    <Footer class="relative w-full bottom-0" />
   </div>
 </template>
 
@@ -69,10 +69,4 @@ async function changeToIncomplete(task) {
   readFromStore();
 }
 </script>
-<style>
-body {
-  background-image: url("../assets/sticknotes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>
+<style></style>

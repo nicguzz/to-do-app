@@ -93,7 +93,12 @@ body {
 }
 
 .tasks {
-  @apply flex flex-row  justify-center mx-40 gap-2;
+  @apply min-h-full  justify-center mx-40 gap-2 grid gap-4 grid-cols-3 grid-rows-3;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px; */
 }
 
 .tasks-area {
