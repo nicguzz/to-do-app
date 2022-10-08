@@ -11,25 +11,25 @@
         <h3 class="text-m">{{ taskData.description }}</h3>
       </div>
 
-      <div class="task-editdelete">
-        <button v-if="isComplete" class="task-red" @click.prevent="recoverItem">
+      <div v-if="isComplete" class="task-editdelete">
+        <button class="task-red" @click.prevent="recoverItem">
           <i class="fa-sharp fa-solid fa-arrow-rotate-left w-20"></i>
         </button>
-        <div v-else class="edit-done-container">
-          <button @click.prevent="completeItem" class="task-green">
-            <i class="fa-solid fa-check fa-lg"></i>
-          </button>
+        <button @click="deleteTask" class="task-delete w-20">
+          <i class="fa-regular fa-trash-can fa-lg"></i>
+        </button>
+      </div>
+      <div v-else class="edit-done-container">
+        <button @click.prevent="completeItem" class="task-green">
+          <i class="fa-solid fa-check fa-lg"></i>
+        </button>
 
-          <button @click.prevent="toggleEdit" class="task-edit">
-            <i class="fa-solid fa-pen-to-square fa-lg"></i>
-          </button>
-        </div>
-
-        <div class="task-delete w-20">
-          <button @click="deleteTask" class="">
-            <i class="fa-regular fa-trash-can fa-lg"></i>
-          </button>
-        </div>
+        <button @click.prevent="toggleEdit" class="task-edit">
+          <i class="fa-solid fa-pen-to-square fa-lg"></i>
+        </button>
+        <button @click="deleteTask" class="task-delete w-20">
+          <i class="fa-regular fa-trash-can fa-lg"></i>
+        </button>
       </div>
       <div v-if="editInput" class="editinput">
         <div class="editinput-text">

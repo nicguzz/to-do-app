@@ -210,7 +210,7 @@ body {
 }
 
 .edit-done-container {
-  @apply flex;
+  @apply flex  justify-around;
 }
 
 #newTaskDesc {
