@@ -153,10 +153,4 @@ const signIn = async () => {
 };
 </script>
 
-<style scoped>
-.nicbackground {
-  background-image: url("../assets/sticknotes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>
+<style scoped></style>

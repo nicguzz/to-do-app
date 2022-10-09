@@ -49,6 +49,8 @@ export const useTaskStore = defineStore("tasks", {
           is_complete: completeStatus,
         })
         .match({ id: id });
+
+      return { data, error };
     },
   },
 });

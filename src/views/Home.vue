@@ -1,20 +1,23 @@
 <template>
-  <div class="relative min-h-screen">
-    <Nav />
-    <NewTask @childNewTask="sendToStore" />
-    <div class="tasks">
-      <TaskItem
-        v-for="(task, index) in taskArray"
-        :key="index"
-        :taskData="task"
-        @editChild="editFather"
-        @deleteChild="deleteId"
-        @emitItemComplete="changeToCompleted"
-        @emitRecoverItem="changeToIncomplete"
-        @superCoolEmit="changeToIncomplete"
-      />
+  <div class="nic-bg">
+    <div class="relative min-h-screen">
+      <Nav />
+
+      <NewTask @childNewTask="sendToStore" />
+      <div class="tasks">
+        <TaskItem
+          v-for="(task, index) in taskArray"
+          :key="index"
+          :taskData="task"
+          @editChild="editFather"
+          @deleteChild="deleteId"
+          @emitItemComplete="changeToCompleted"
+          @emitRecoverItem="changeToIncomplete"
+          @superCoolEmit="changeToIncomplete"
+        />
+      </div>
+      <Footer class="relative w-full bottom-0" />
     </div>
-    <Footer class="relative w-full bottom-0" />
   </div>
 </template>
 
@@ -22,10 +25,12 @@
 import NewTask from "@/components/NewTask.vue";
 import { useTaskStore } from "../stores/task.js";
 import TaskItem from "../components/TaskItem.vue";
-import { ref } from "vue";
+import { ref, getCurrentInstance } from "vue";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
+
+const instance = getCurrentInstance();
 
 // nos definimos la tienda del usuario dentro de una constante
 const taskStore = useTaskStore();
@@ -58,8 +63,11 @@ async function deleteId(idTask) {
 async function changeToCompleted(task) {
   let booleanChange = !task.is_complete;
   let taskID = task.id;
-  await taskStore.completeTask(taskID, booleanChange);
-  readFromStore();
+  const response = await taskStore.completeTask(taskID, booleanChange);
+  console.log(response);
+  await readFromStore();
+  console.log(taskArray.value);
+  // never do this :D
 }
 
 async function changeToIncomplete(task) {

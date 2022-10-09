@@ -11,7 +11,7 @@
         <h3 class="text-m">{{ taskData.description }}</h3>
       </div>
 
-      <div v-if="isComplete" class="task-editdelete">
+      <div v-if="taskData.is_complete" class="task-recover">
         <button class="task-red" @click.prevent="recoverItem">
           <i class="fa-sharp fa-solid fa-arrow-rotate-left w-20"></i>
         </button>
@@ -46,13 +46,13 @@
 
 <script setup>
 import { ref } from "vue";
+const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
 
 // VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
 let editTitle = ref("");
 let editDescription = ref("");
-let isComplete = props.taskData.is_complete;
 
 // FUNCTION THAT TOGGLES THE VISIBILITY OF THE INPUT
 
@@ -105,7 +105,7 @@ function recoverItem() {
 }
 
 const emit = defineEmits(["editChild", "deleteChild"]);
-const props = defineProps(["taskData"]);
+console.log("props", props);
 </script>
 
-<style></style>
+<style scoped></style>

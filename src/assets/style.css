@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* My Css */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap");
 
 body {
 }
@@ -112,7 +113,7 @@ body {
   @apply font-medium bg-yellow-200;
 }
 
-.task-editdelete {
+.task-recover {
   @apply flex flex-row justify-evenly;
 }
 
@@ -238,4 +239,17 @@ body {
 }
 #editdescription {
   @apply w-full border rounded-lg;
+}
+
+.nicbackground {
+  background-image: url("../assets/sticknotes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nic-bg {
+  background-image: url("../assets/yoann-siloine-dyaxQ-aoGWY-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
