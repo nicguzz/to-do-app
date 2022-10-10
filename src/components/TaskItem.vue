@@ -1,5 +1,6 @@
 <template>
   <div class="tasks-area">
+    <!-- If task is completed, applying class that gives task a grey background, if its not complete, the regular color -->
     <div
       :class="[
         taskData.is_complete ? 'task-area-complete' : 'tasks-container',
@@ -16,7 +17,7 @@
 
         <h3 class="text-m">{{ taskData.description }}</h3>
       </div>
-
+      <!-- If task is completed, we give option to delete task or to recover -->
       <div v-if="taskData.is_complete" class="task-recover">
         <button class="task-red" @click.prevent="recoverItem">
           <i class="fa-sharp fa-solid fa-arrow-rotate-left w-20"></i>
@@ -25,6 +26,7 @@
           <i class="fa-regular fa-trash-can fa-lg"></i>
         </button>
       </div>
+      <!-- If task is not completed, we give option to edit, delete or complete task -->
       <div v-else class="edit-done-container">
         <button @click.prevent="completeItem" class="task-green">
           <i class="fa-solid fa-check fa-lg"></i>
@@ -46,7 +48,7 @@
             v-model="editDescription"
           ></textarea>
         </div>
-
+        <!-- If we click Edit, it opens inputs to edit task -->
         <button @click="edit" class="apply-edit">Apply</button>
         <h1 v-if="errorContainer">{{ errorMessage }}</h1>
       </div>
@@ -61,11 +63,14 @@ const props = defineProps(["taskData"]);
 let editInput = ref(false);
 
 // TIME FORMATTING FROM DATABASE
+// Database time: 2022-10-10 09:29:58.285272+00
 let time = props.taskData.inserted_at;
 
 let time2 = time.replace("T", " ");
 let time3 = time2.replace(".", " ");
 let timeFinal = time3.slice(0, 20);
+
+// Formatted time: 2022-10-10 09:29:58
 
 // VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
 let editTitle = ref("");
@@ -116,12 +121,10 @@ function completeItem() {
 }
 
 function recoverItem() {
-  //
+  //This function issues an emit of the html query to be used in Home.vue with a new function changeToIncomplete @emitRecoverItem="changeToIncomplete"
 
   emit("emitRecoverItem", props.taskData);
 }
 
 const emit = defineEmits(["editChild", "deleteChild"]);
 </script>
-
-<style scoped></style>

@@ -32,5 +32,3 @@ onMounted(async () => {
     <router-view />
   </div>
 </template>
-
-<style></style>
