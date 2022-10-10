@@ -60,6 +60,13 @@ const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
 
+// TIME FORMATTING FROM DATABASE
+let time = props.taskData.inserted_at;
+
+let time2 = time.replace("T", " ");
+let time3 = time2.replace(".", " ");
+let timeFinal = time3.slice(0, 20);
+
 // VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
 let editTitle = ref("");
 let editDescription = ref("");
@@ -115,12 +122,6 @@ function recoverItem() {
 }
 
 const emit = defineEmits(["editChild", "deleteChild"]);
-
-let time = props.taskData.inserted_at;
-
-let time2 = time.replace("T", " ");
-let time3 = time2.replace(".", " ");
-let timeFinal = time3.slice(0, 20);
 </script>
 
 <style scoped></style>
