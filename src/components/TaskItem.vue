@@ -2,6 +2,7 @@
   <div class="tasks-area">
     <div class="tasks-container">
       <div class="py-1 flex flex-col">
+        <p class="tasks-td">{{ taskData.inserted_at }}</p>
         <p class="tasks-td">Title</p>
         <h3 class="text-m">{{ taskData.title }}</h3>
       </div>
@@ -46,6 +47,7 @@
 
 <script setup>
 import { ref } from "vue";
+import moment from "moment";
 const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
@@ -53,6 +55,7 @@ let editInput = ref(false);
 // VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
 let editTitle = ref("");
 let editDescription = ref("");
+const time = moment().format("LLL");
 
 // FUNCTION THAT TOGGLES THE VISIBILITY OF THE INPUT
 
@@ -105,7 +108,6 @@ function recoverItem() {
 }
 
 const emit = defineEmits(["editChild", "deleteChild"]);
-console.log("props", props);
 </script>
 
 <style scoped></style>
