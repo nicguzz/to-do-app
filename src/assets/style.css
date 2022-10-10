@@ -6,8 +6,6 @@
 
 /* My Css */
 
-body {
-}
 .signin-center {
   @apply flex justify-center;
 }
@@ -91,6 +89,10 @@ body {
 
 .tasks-container {
   @apply rounded  w-full  p-2 bg-yellow-100 shadow-xl;
+}
+
+.task-area-complete {
+  @apply rounded  w-full  p-2 bg-gray-300 shadow-xl line-through;
 }
 
 .tasks {
@@ -256,4 +258,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#task-time {
+  @apply text-xs text-end;
 }

@@ -79,6 +79,6 @@ _Done:_
 
 _Done:_
 
-Responsive
-Algo de animation
-Algunos fixes
+- Responsive design is done
+- Some fixes in margin, padding
+- Time format

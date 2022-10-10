@@ -29,7 +29,6 @@ import { ref, getCurrentInstance } from "vue";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
-
 const instance = getCurrentInstance();
 
 // nos definimos la tienda del usuario dentro de una constante

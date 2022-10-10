@@ -1,8 +1,13 @@
 <template>
   <div class="tasks-area">
-    <div class="tasks-container">
+    <div
+      :class="[
+        taskData.is_complete ? 'task-area-complete' : 'tasks-container',
+        errorClass,
+      ]"
+    >
       <div class="py-1 flex flex-col">
-        <p class="tasks-td">{{ taskData.inserted_at }}</p>
+        <p id="task-time">{{ timeFinal }}</p>
         <p class="tasks-td">Title</p>
         <h3 class="text-m">{{ taskData.title }}</h3>
       </div>
@@ -35,7 +40,11 @@
       <div v-if="editInput" class="editinput">
         <div class="editinput-text">
           <input type="text" v-model="editTitle" />
-          <input id="editdescription" type="text" v-model="editDescription" />
+          <textarea
+            id="editdescription"
+            type="text"
+            v-model="editDescription"
+          ></textarea>
         </div>
 
         <button @click="edit" class="apply-edit">Apply</button>
@@ -47,7 +56,6 @@
 
 <script setup>
 import { ref } from "vue";
-import moment from "moment";
 const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
@@ -55,7 +63,6 @@ let editInput = ref(false);
 // VARIABLE WITH EMPTY STRING FOR INPUT TO EDIT
 let editTitle = ref("");
 let editDescription = ref("");
-const time = moment().format("LLL");
 
 // FUNCTION THAT TOGGLES THE VISIBILITY OF THE INPUT
 
@@ -108,6 +115,12 @@ function recoverItem() {
 }
 
 const emit = defineEmits(["editChild", "deleteChild"]);
+
+let time = props.taskData.inserted_at;
+
+let time2 = time.replace("T", " ");
+let time3 = time2.replace(".", " ");
+let timeFinal = time3.slice(0, 20);
 </script>
 
 <style scoped></style>
