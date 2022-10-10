@@ -74,3 +74,11 @@ _Done:_
 - Footer fixed
 - Minor fixes in Task Complete/Edit/Delete Icons
 - When clicking to complete task, it doesnt change to completed task automatically, this is an important issue.
+
+## **Oct 8**
+
+_Done:_
+
+Responsive
+Algo de animation
+Algunos fixes

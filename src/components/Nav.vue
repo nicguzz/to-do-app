@@ -9,7 +9,7 @@
         <p class="todoapp-image-nav"></p>
         <p class="max-w-xs mt-2 text-xl text-gray-600">Iron cHeck</p>
       </nav>
-
+      <h2 class="font-light text-sm font-sans">{{ time }}</h2>
       <div
         class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4"
         id="nav-content"
@@ -30,9 +30,11 @@
 <script setup>
 import { useUserStore } from "../stores/user.js";
 import { useRouter } from "vue-router";
+import moment from "moment";
+
 const redirect = useRouter();
 const userStore = useUserStore();
-
+const time = moment().format("LLL");
 async function signout() {
   await userStore.signOut();
   redirect.push({ path: "/auth/login" });
