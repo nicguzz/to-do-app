@@ -75,7 +75,7 @@ _Done:_
 - Minor fixes in Task Complete/Edit/Delete Icons
 - When clicking to complete task, it doesnt change to completed task automatically, this is an important issue.
 
-## **Oct 8**
+## **Oct 10**
 
 _Done:_
 
@@ -83,3 +83,4 @@ _Done:_
 - Some fixes in margin, padding
 - Time format
 - Clean code with sonarcloud.io
+- style.css ordered
