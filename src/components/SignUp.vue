@@ -36,9 +36,7 @@
                   class="signin-password"
                   placeholder="Enter your password"
                 />
-                <span
-                  class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
-                >
+                <span class="eyeicon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

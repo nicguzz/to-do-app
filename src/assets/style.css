@@ -4,16 +4,92 @@
 
 /* My Css */
 
-.signin-center {
-  @apply flex justify-center;
+/* COMPONENTS 
+HOME
+ NAV 
+ IRON LOGO
+SIGNIN
+ SIGNUP
+ NEW TASK
+
+ TASK ITEMS
+ FOOTER 
+ */
+
+/* ---------------------------------------------------------HOME----------------------------------- */
+.nic-bg {
+  background-image: url("../assets/task-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.signout {
+  @apply bg-red-400 text-gray-200 p-2 rounded hover:bg-red-500 hover:text-gray-100;
+}
+
+/* ---------------------------------------------------------NAV----------------------------------- */
+.nav-container {
+  @apply w-full z-30 top-10 py-1 bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 shadow-lg border-b border-blue-400;
+}
+
+.navbox {
+  @apply w-full flex items-center justify-between mt-0 px-6 py-2;
+}
+.nav-title {
+  @apply max-w-xs mt-2 text-xl text-gray-600;
+}
+
+.nav-time {
+  @apply font-light text-sm font-sans;
+}
+
+.nav-logout-box {
+  @apply order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4;
+}
+
+.todoapp-image-nav {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+.ironcheck-nav {
+  @apply flex flex-row gap-3;
+}
+
+/* ---------------------------------------------------------IRON LOGO----------------------------------- */
+.logo-title {
+  @apply text-5xl text-sky-500 font-bold;
+}
+.image-container {
+  @apply h-80 flex items-center justify-center flex-col;
+}
+
+.todoapp-image {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+}
+
+.atodoapp-desc {
+  @apply font-medium self-center text-sm sm:text-xl text-gray-600;
+}
+
+/* ---------------------------------------------------------SIGNIN----------------------------------- */
+.signin {
+  @apply font-medium self-center text-xl sm:text-3xl text-gray-800;
 }
 
 .signin-container {
-  @apply flex flex-col opacity-80 shadow-2xl bg-blue-300  px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md;
+  @apply flex flex-col opacity-80 shadow-2xl bg-blue-300  px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md mt-60;
 }
 
-.signin {
-  @apply font-medium self-center text-xl sm:text-3xl text-gray-800;
+.signin-center {
+  @apply flex justify-center;
 }
 
 .signin-credentials {
@@ -28,16 +104,11 @@
   @apply text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400;
 }
 
-.signin-password-label {
-  @apply mb-1 text-xs sm:text-sm tracking-wide text-gray-600;
-}
-
 .signin-password {
   @apply text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400;
 }
-
-.submit-button {
-  @apply flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in;
+.signin-password-label {
+  @apply mb-1 text-xs sm:text-sm tracking-wide text-gray-600;
 }
 
 .register-now {
@@ -53,38 +124,31 @@
   @apply flex justify-center items-center mt-6;
 }
 
+.eyeicon {
+  @apply h-full  font-normal text-center  absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3;
+}
+
+.submit-button {
+  @apply flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in;
+}
+
 .button-text {
   @apply text-xs ml-2 text-blue-500 font-semibold;
 }
 
+.nicbackground {
+  background-image: url("../assets/sticknotes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* ---------------------------------------------------------SIGNUP----------------------------------- */
 .signup-container {
-  @apply flex flex-col opacity-80 shadow-2xl bg-paper-color  px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md;
+  @apply flex flex-col opacity-80 shadow-2xl bg-paper-color  px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md mt-60;
 }
 
-.image-container {
-  @apply h-80 flex items-center justify-center flex-col;
-}
-
-.todoapp-image {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
-  background-size: 100%;
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-}
-
-.todoapp-image-mini {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
-  background-size: 100%;
-  width: 50px;
-  height: 50px;
-  background-repeat: no-repeat;
-}
-
-.atodoapp-desc {
-  @apply font-medium self-center text-sm sm:text-xl text-gray-600;
-}
-
+/* ---------------------------------------------------------NEW_TASK----------------------------------- */
 .taskcreator-area {
   @apply w-full p-8 flex justify-center font-sans;
 }
@@ -92,81 +156,56 @@
 .taskcreator-container {
   @apply rounded  w-3/6  p-2 bg-yellow-100 shadow-xl;
 }
-
-.tasks-container {
-  @apply rounded  w-full  p-2 bg-yellow-100 shadow-xl;
+.taskcreator-container:hover {
+  @apply font-medium bg-yellow-200;
 }
 
-.task-area-complete {
-  @apply rounded  w-full  p-2 bg-gray-300 shadow-xl line-through;
+.new-title {
+  @apply bg-white p-2 rounded mt-1 border-b cursor-pointer;
 }
+
+.new-description {
+  @apply bg-white p-2 rounded mt-1 border-b  cursor-pointer;
+}
+#newTaskDesc {
+  width: 100%;
+}
+
+#newTaskTitle {
+  width: 100%;
+}
+.errormsg {
+  color: red;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------TASK ITEM---------------------S-------------- */
 
 .tasks {
   @apply min-h-full  justify-center md:mx-20 sm:mx-20 gap-2 grid gap-4 md:grid-cols-3  md:grid-rows-3 sm:grid-cols-1 sm:grid-rows-1 md:mx-80;
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 12px;
-  grid-row-gap: 12px; */
+}
+
+.tasks-td {
+  font-size: 0.6rem;
 }
 
 .tasks-area {
   @apply w-full;
 }
-.tasks-container:hover {
-  @apply font-medium bg-yellow-200;
+
+.tasks-container {
+  @apply rounded  w-full  p-2 bg-yellow-100 shadow-xl;
+}
+.task-area-complete {
+  @apply rounded  w-full  p-2 bg-gray-300 shadow-xl line-through;
 }
 
-.taskcreator-container:hover {
+.tasks-container:hover {
   @apply font-medium bg-yellow-200;
 }
 
 .task-recover {
   @apply flex flex-row justify-evenly;
-}
-
-.footer {
-  @apply relative w-full bottom-0 mt-10 sm:mt-10 md:mt-0;
-}
-.footer-area {
-  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-10;
-}
-
-.footer-container {
-  @apply max-w-screen-xl  px-4 py-2 flex flex-col items-center;
-}
-
-.github-web {
-  @apply flex mt-2 space-x-6 text-gray-600;
-}
-
-.rights-reserved {
-  @apply text-xs text-gray-800 mt-4 flex flex-row-reverse;
-}
-
-.nav-container {
-  @apply w-full z-30 top-10 py-1 bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 shadow-lg border-b border-blue-400;
-}
-
-.navbox {
-  @apply w-full flex items-center justify-between mt-0 px-6 py-2;
-}
-
-.todoapp-image-nav {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
-  background-size: 100%;
-  width: 30px;
-  height: 30px;
-  background-repeat: no-repeat;
-}
-
-.ironcheck-nav {
-  @apply flex flex-row gap-3;
-}
-
-.errormsg {
-  color: red;
-  font-weight: 600;
 }
 
 .task-completed {
@@ -217,20 +256,20 @@
   @apply text-white bg-blue-600;
 }
 
-.tasks-td {
-  font-size: 0.6rem;
-}
-
 .edit-done-container {
   @apply flex  justify-around;
 }
 
-#newTaskDesc {
-  width: 100%;
+#task-time {
+  @apply text-xs text-end;
 }
 
-#newTaskTitle {
-  width: 100%;
+#edittitle {
+  @apply w-full border rounded-lg;
+}
+
+#editdescription {
+  @apply w-full border rounded-lg mt-2;
 }
 
 .editinput-text {
@@ -240,64 +279,35 @@
 .apply-edit {
   @apply bg-blue-500 border mt-2 px-2 text-white rounded-md;
 }
-
-#edittitle {
-  @apply w-full border rounded-lg;
-}
-#editdescription {
-  @apply w-full border rounded-lg mt-2;
+/* ---------------------------------------------------------FOOTER----------------------------------- */
+.footer {
+  @apply relative w-full bottom-0 mt-10 sm:mt-10 md:mt-0;
 }
 
-.nicbackground {
-  background-image: url("../assets/sticknotes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+.footer-area {
+  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-10;
 }
 
-.nic-bg {
-  background-image: url("../assets/task-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.footer-container {
+  @apply max-w-screen-xl  px-4 py-2 flex flex-col items-center;
 }
 
-#task-time {
-  @apply text-xs text-end;
+.github-web {
+  @apply flex mt-2 space-x-6 text-gray-600;
+}
+
+.rights-reserved {
+  @apply text-xs text-gray-800 mt-4 flex flex-row-reverse;
 }
 
 .footer-title {
   @apply max-w-xs mt-2 text-xl text-gray-600;
 }
 
-.logo-title {
-  @apply text-5xl text-sky-500 font-bold;
-}
-
-.nav-title {
-  @apply max-w-xs mt-2 text-xl text-gray-600;
-}
-
-.nav-time {
-  @apply font-light text-sm font-sans;
-}
-
-.nav-logout-box {
-  @apply order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4;
-}
-
-.signout {
-  @apply bg-red-400 text-gray-200 p-2 rounded hover:bg-red-500 hover:text-gray-100;
-}
-
-.new-title {
-  @apply bg-white p-2 rounded mt-1 border-b cursor-pointer;
-}
-
-.new-description {
-  @apply bg-white p-2 rounded mt-1 border-b  cursor-pointer;
-}
-
-.eyeicon {
-  @apply h-full  font-normal text-center  absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3;
+.todoapp-image-mini {
+  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-size: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
 }
