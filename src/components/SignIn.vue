@@ -69,18 +69,7 @@
 
             <div class="flex w-full">
               <button type="submit" class="submit-button">
-                <span class="mr-2 uppercase">Sign in</span>
-                <span>
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  ></svg>
-                </span>
+                <span class="uppercase">Sign in</span>
               </button>
             </div>
           </form>
