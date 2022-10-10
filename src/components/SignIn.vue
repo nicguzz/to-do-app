@@ -1,6 +1,4 @@
 <template>
-  <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
-
   <div class="nicbackground">
     <IroncheckLogo />
     <p v-if="errorMsg" class="">
@@ -43,9 +41,7 @@
                   class="signin-password"
                   placeholder="Enter your password"
                 />
-                <span
-                  class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
-                >
+                <span class="eyeicon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -89,10 +85,10 @@
             </div>
           </form>
         </div>
-        <div class="flex justify-center items-center mt-6">
+        <div class="register-now-area">
           <span class="register-now"
             >You don't have an account?
-            <p class="text-xs ml-2 text-blue-500 font-semibold">
+            <p class="button-text">
               <PersonalRouter
                 :route="route"
                 :buttonText="buttonText"
@@ -108,12 +104,9 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import PersonalRouter from "./PersonalRouter.vue";
-import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
-import IroncheckLogo from "./IroncheckLogo.vue";
+import PersonalRouter from "./PersonalRouter.vue";
 
 // Route Variables
 const route = "/auth/sign-up";
@@ -152,5 +145,3 @@ const signIn = async () => {
   }
 };
 </script>
-
-<style scoped></style>

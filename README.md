@@ -82,3 +82,4 @@ _Done:_
 - Responsive design is done
 - Some fixes in margin, padding
 - Time format
+- Clean code with sonarcloud.io

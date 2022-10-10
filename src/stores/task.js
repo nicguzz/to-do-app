@@ -13,13 +13,11 @@ export const useTaskStore = defineStore("tasks", {
         .select("*")
         .order("id", { ascending: false });
       this.tasks = tasks;
-      // console.log(tasks);
       return this.tasks;
     },
     // New code
     async addTask(title, description) {
-      console.log(useUserStore().user.id);
-      const { data, error } = await supabase.from("tasks").insert([
+      await supabase.from("tasks").insert([
         {
           user_id: useUserStore().user.id,
           title: title,
@@ -29,17 +27,13 @@ export const useTaskStore = defineStore("tasks", {
       ]);
     },
     async editTask(id, title, description) {
-      console.log(useUserStore().user.id);
-      const { data, error } = await supabase
+      await supabase
         .from("tasks")
         .update({ title: title, description: description })
         .match({ id: id }); //match to find the id in the database so the changes above can be applied to a specific user
     },
     async deleteTask(id) {
-      const { data, error } = await supabase
-        .from("tasks")
-        .delete()
-        .match({ id: id });
+      const { error } = await supabase.from("tasks").delete().match({ id: id });
     },
     async completeTask(id, completeStatus) {
       // This function is used in the function changeComplete(Home.vue) to complete the task in the database.

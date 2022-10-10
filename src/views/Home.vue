@@ -31,49 +31,49 @@ import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
 const instance = getCurrentInstance();
 
-// nos definimos la tienda del usuario dentro de una constante
+// we define user store inside a const
 const taskStore = useTaskStore();
-// Inicializamos array de tareas
+// we start array of tasks
 let taskArray = ref([]);
 
 async function readFromStore() {
+  // This is the function to read data from database
   taskArray.value = await taskStore.fetchTasks();
 }
 
 readFromStore();
-// console.log(taskArray);
-// Enviamos los datos de la tarea a la Tienda taskStore
+// We add new task and send to database
 async function sendToStore(title, description) {
   await taskStore.addTask(title, description);
   readFromStore();
 }
 
 async function editFather(task) {
+  // We edit a task and send to database
   await taskStore.editTask(task.id, task.title, task.description);
   readFromStore();
 }
 
 async function deleteId(idTask) {
-  console.log(idTask.id);
+  // We delete a task and send to database
+
   await taskStore.deleteTask(idTask.id);
   readFromStore();
 }
 
 async function changeToCompleted(task) {
+  // We change the value of is_complete to true in the database
   let booleanChange = !task.is_complete;
   let taskID = task.id;
   const response = await taskStore.completeTask(taskID, booleanChange);
-  console.log(response);
   await readFromStore();
-  console.log(taskArray.value);
-  // never do this :D
 }
 
 async function changeToIncomplete(task) {
+  // We change the value of is_complete to false in the database
   let booleanChange = !task.is_complete;
   let taskID = task.id;
   await taskStore.completeTask(taskID, booleanChange);
   readFromStore();
 }
 </script>
-<style></style>

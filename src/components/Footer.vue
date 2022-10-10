@@ -2,14 +2,9 @@
   <footer class="footer-area">
     <div class="footer-container">
       <p class="todoapp-image-mini"></p>
-      <p class="max-w-xs mt-2 text-xl text-gray-600">Iron cHeck</p>
+      <p class="footer-title">Iron cHeck</p>
       <div class="github-web">
-        <a
-          class="hover:opacity-75"
-          href="https://github.com/nicguzz"
-          target="https/github.com/nicguzz"
-          rel="noreferrer"
-        >
+        <a class="hover:opacity-75" href="https://github.com/nicguzz">
           <span class="sr-only"> GitHub </span>
           <svg
             class="w-6 h-6"
@@ -44,7 +39,3 @@
     </div>
   </footer>
 </template>
-
-<script setup></script>
-
-<style></style>
