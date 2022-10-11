@@ -283,11 +283,11 @@ SIGNIN
 }
 /* ---------------------------------------------------------FOOTER----------------------------------- */
 .footer {
-  @apply relative w-full bottom-0 mt-10 md:mt-0;
+  @apply absolute w-full bottom-0 mt-10 md:mt-0;
 }
 
 .footer-area {
-  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-10 relative md:mt-0;
+  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-10  md:mt-0;
 }
 
 .footer-container {
