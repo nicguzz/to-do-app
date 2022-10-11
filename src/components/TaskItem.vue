@@ -41,7 +41,7 @@
       </div>
       <div v-if="editInput" class="editinput">
         <div class="editinput-text">
-          <input type="text" v-model="editTitle" />
+          <input id="edittitle" type="text" v-model="editTitle" />
           <textarea
             id="editdescription"
             type="text"
