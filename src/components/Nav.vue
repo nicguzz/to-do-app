@@ -7,6 +7,7 @@
       </nav>
       <h2 class="nav-time">{{ time }}</h2>
       <div class="nav-logout-box" id="nav-content">
+        <p class="usernav">{{ username }}</p>
         <button @click="signout" class="signout">Log Out</button>
       </div>
     </div>
@@ -22,6 +23,8 @@ import moment from "moment";
 const redirect = useRouter();
 const userStore = useUserStore();
 const time = moment().format("LLL");
+const username = userStore.user.email.split("@")[0];
+
 async function signout() {
   // function that signs out user
   await userStore.signOut();

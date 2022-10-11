@@ -8,7 +8,7 @@
       ]"
     >
       <div class="py-1 flex flex-col">
-        <p id="task-time">{{ timeFinal }}</p>
+        <p id="task-time">{{ taskInsertedTime }}</p>
         <p class="tasks-td">Title</p>
         <h3 class="text-m">{{ taskData.title }}</h3>
       </div>
@@ -66,9 +66,7 @@ let editInput = ref(false);
 // Database time: 2022-10-10 09:29:58.285272+00
 let time = props.taskData.inserted_at;
 
-let time2 = time.replace("T", " ");
-let time3 = time2.replace(".", " ");
-let timeFinal = time3.slice(0, 20);
+let taskInsertedTime = time.replace("T", " ").replace(".", " ").slice(0, 20);
 
 // Formatted time: 2022-10-10 09:29:58
 
