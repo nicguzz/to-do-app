@@ -142,7 +142,9 @@ SIGNIN
   background-repeat: no-repeat;
   height: 100vh;
 }
-
+.errorsignin {
+  @apply text-red-500 flex justify-center text-2xl;
+}
 /* ---------------------------------------------------------SIGNUP----------------------------------- */
 .signup-container {
   @apply flex flex-col opacity-80 shadow-2xl bg-paper-color px-6 md:px-8 lg:px-10 py-8 rounded-3xl  max-w-md mt-60;
@@ -283,11 +285,11 @@ SIGNIN
 }
 /* ---------------------------------------------------------FOOTER----------------------------------- */
 .footer {
-  @apply absolute w-full bottom-0 mt-10 md:mt-0;
+  @apply relative w-full bottom-0 mt-10 md:mt-0;
 }
 
 .footer-area {
-  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 mt-10  md:mt-0;
+  @apply flex justify-center bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  md:mt-0;
 }
 
 .footer-container {

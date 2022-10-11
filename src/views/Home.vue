@@ -16,8 +16,8 @@
           @superCoolEmit="changeToIncomplete"
         />
       </div>
-      <Footer class="footer" />
     </div>
+    <Footer class="footer" />
   </div>
 </template>
 

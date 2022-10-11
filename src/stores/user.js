@@ -17,7 +17,6 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        console.log(this.user);
       }
     },
     async signUp(email, password) {
@@ -28,7 +27,6 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        console.log(this.user);
       }
     },
     async signOut() {
@@ -45,17 +43,3 @@ export const useUserStore = defineStore("user", {
     },
   },
 });
-
-// Signout?
-// const loading = ref(true)
-// async function signOut() {
-//   try {
-//     loading.value = true
-//     let { error } = await supabase.auth.signOut()
-//     if (error) throw error
-//   } catch (error) {
-//     alert(error.message)
-//   } finally {
-//     loading.value = false
-//   }
-// }

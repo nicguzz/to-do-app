@@ -1,7 +1,7 @@
 <template>
   <div class="nicbackground">
     <IroncheckLogo />
-    <p v-if="errorMsg" class="">
+    <p v-if="errorMsg" class="errorsignin">
       {{ errorMsg }}
     </p>
     <div class="signin-center">
@@ -122,6 +122,7 @@ const signIn = async () => {
   try {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
+
     // redirects user to the homeView
     redirect.push({ path: "/" });
   } catch (error) {
