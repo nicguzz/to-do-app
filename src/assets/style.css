@@ -152,7 +152,7 @@ SIGNIN
 
 /* ---------------------------------------------------------NEW_TASK----------------------------------- */
 .taskcreator-area {
-  @apply min-h-full py-10 justify-center  mx-20 gap-2 grid gap-4  grid-cols-1 grid-rows-1 md:flex md:justify-center;
+  @apply min-h-full py-10 justify-center mx-2 md:mx-20 gap-2 grid gap-4  grid-cols-1 grid-rows-1 md:flex md:justify-center;
   /* @apply md:w-full py-6 pl-20 font-sans md:flex md:justify-center;
   width: 130vh; */
 }
@@ -183,10 +183,10 @@ SIGNIN
   font-weight: 600;
 }
 
-/* ---------------------------------------------------------TASK ITEM---------------------S-------------- */
+/* ---------------------------------------------------------TASKITEM----------------------------------- */
 
 .tasks {
-  @apply min-h-full  justify-center md:mx-10 mx-20 gap-2 grid gap-4 md:grid-cols-3  md:grid-rows-3 grid-cols-1 grid-rows-1;
+  @apply min-h-full  justify-center md:mx-10 mx-2 gap-2 grid gap-4 md:grid-cols-3  md:grid-rows-3 grid-cols-1 grid-rows-1;
 }
 
 .tasks-td {
