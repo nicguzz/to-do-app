@@ -18,7 +18,7 @@ SIGNIN
 
 /* ---------------------------------------------------------HOME----------------------------------- */
 .nic-bg {
-  background-image: url("../assets/task-bg.jpg");
+  background-image: url("https://res.cloudinary.com/dbmzbapuj/image/upload/v1665473326/task-bg_qev9ig.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -48,7 +48,7 @@ SIGNIN
 }
 
 .todoapp-image-nav {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-image: url("https://www.pikpng.com/pngl/b/182-1828006_check-mark-icon-blue-clipart.png");
   background-size: 100%;
   width: 30px;
   height: 30px;
@@ -68,7 +68,7 @@ SIGNIN
 }
 
 .todoapp-image {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-image: url("https://www.pikpng.com/pngl/b/182-1828006_check-mark-icon-blue-clipart.png");
   background-size: 100%;
   width: 200px;
   height: 200px;
@@ -137,7 +137,7 @@ SIGNIN
 }
 
 .nicbackground {
-  background-image: url("../assets/sticknotes.jpg");
+  background-image: url("https://res.cloudinary.com/dbmzbapuj/image/upload/v1665473330/sticknotes_kzfzni.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -305,7 +305,7 @@ SIGNIN
 }
 
 .todoapp-image-mini {
-  background-image: url("/Users/nicguzzetti/Desktop/ironhack/final-boiler-plate/src/assets/1292906.png");
+  background-image: url("https://www.pikpng.com/pngl/b/182-1828006_check-mark-icon-blue-clipart.png");
   background-size: 100%;
   width: 50px;
   height: 50px;

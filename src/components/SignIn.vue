@@ -14,7 +14,7 @@
         <div class="mt-10">
           <form action="#" @submit.prevent="signIn">
             <div class="flex flex-col mb-5">
-              <label for="email" class="signin-email-label">email @:</label>
+              <label for="email" class="signin-email-label">Email @:</label>
               <div class="relative">
                 <input
                   id="email"
@@ -29,7 +29,7 @@
 
             <div class="flex flex-col mb-6">
               <label for="password" class="signin-password-label"
-                >password:</label
+                >Password:</label
               >
 
               <div class="relative">
