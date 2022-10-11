@@ -40,7 +40,7 @@ SIGNIN
 }
 
 .nav-time {
-  @apply font-light text-sm font-sans;
+  @apply font-light text-xs md:text-sm  font-sans;
 }
 
 .nav-logout-box {
@@ -56,7 +56,7 @@ SIGNIN
 }
 
 .ironcheck-nav {
-  @apply flex flex-row gap-3;
+  @apply flex items-center flex-col md:flex-row gap-0 md:gap-3;
 }
 
 /* ---------------------------------------------------------IRON LOGO----------------------------------- */
