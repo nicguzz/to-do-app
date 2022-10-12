@@ -26,10 +26,8 @@ import { ref } from "vue";
 import { useUserStore } from "../stores/user.js";
 import { useRouter } from "vue-router";
 import moment from "moment";
-import AlertsComponent from "../components/AlertsComponent.vue";
-import { alerts } from "../components/AlertsComponent.vue";
-
-console.log(alerts.methods.success);
+// import AlertsComponent from "../components/AlertsComponent.vue";
+// import { alerts } from "../components/AlertsComponent.vue";
 
 const redirect = useRouter();
 const userStore = useUserStore();
