@@ -9,6 +9,13 @@
       <div class="nav-logout-box" id="nav-content">
         <p class="usernav">{{ username }}</p>
         <button @click="signout" class="signout">Log Out</button>
+        <button
+          @click="alerts.methods.success()"
+          class="btn btn-outline-primary col s12 m3"
+          type="button"
+        >
+          Clickme
+        </button>
       </div>
     </div>
   </nav>
@@ -19,6 +26,10 @@ import { ref } from "vue";
 import { useUserStore } from "../stores/user.js";
 import { useRouter } from "vue-router";
 import moment from "moment";
+import AlertsComponent from "../components/AlertsComponent.vue";
+import { alerts } from "../components/AlertsComponent.vue";
+
+console.log(alerts.methods.success);
 
 const redirect = useRouter();
 const userStore = useUserStore();
