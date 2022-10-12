@@ -17,7 +17,6 @@
         />
       </div>
     </div>
-    <!-- <AlertsComponent /> -->
     <Footer class="footer" />
   </div>
 </template>
@@ -30,7 +29,6 @@ import { ref } from "vue";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
-import AlertsComponent from "../components/AlertsComponent.vue";
 
 // we define user store inside a const
 const taskStore = useTaskStore();

@@ -9,13 +9,6 @@
       <div class="nav-logout-box" id="nav-content">
         <p class="usernav">{{ username }}</p>
         <button @click="signout" class="signout">Log Out</button>
-        <button
-          @click="alerts.methods.success()"
-          class="btn btn-outline-primary col s12 m3"
-          type="button"
-        >
-          Clickme
-        </button>
       </div>
     </div>
   </nav>

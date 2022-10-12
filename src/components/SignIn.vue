@@ -74,9 +74,6 @@
             </div>
           </form>
         </div>
-        <div class="google-signin">
-          <button @click="signInWithGoogle">Google signin</button>
-        </div>
         <div class="register-now-area">
           <span class="register-now"
             >You don't have an account?
@@ -99,7 +96,6 @@ import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import PersonalRouter from "./PersonalRouter.vue";
-import { supabase } from "../supabase";
 
 // Route Variables
 const route = "/auth/sign-up";
@@ -138,20 +134,4 @@ const signIn = async () => {
     }, 5000);
   }
 };
-
-async function signInWithGoogle() {
-  try {
-    // calls the user store and send the users info to backend to logIn
-    await useUserStore().signInGoogle();
-
-    // redirects user to the homeView
-  } catch (error) {
-    // displays error message
-    errorMsg.value = `Error: ${error.message}`;
-    // hides error message
-    setTimeout(() => {
-      errorMsg.value = null;
-    }, 5000);
-  }
-}
 </script>
