@@ -19,7 +19,7 @@
             />
           </svg>
         </a>
-        <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+        <a class="hover:opacity-75" target="_blank" rel="noreferrer">
           <span class="sr-only"> Web </span>
           <svg
             class="w-6 h-6"

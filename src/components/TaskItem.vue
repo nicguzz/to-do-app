@@ -1,6 +1,7 @@
 <template>
   <div class="tasks-area">
     <!-- If task is completed, applying class that gives task a grey background, if its not complete, the regular color -->
+
     <div
       :class="[
         taskData.is_complete ? 'task-area-complete' : 'tasks-container',
@@ -61,6 +62,8 @@ import { ref } from "vue";
 const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
+
+const myArray = ["nic", "jashdjsad", "Ric", "mapi"];
 
 // TIME FORMATTING FROM DATABASE
 // Database time: 2022-10-10 09:29:58.285272+00

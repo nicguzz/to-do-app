@@ -25,11 +25,10 @@
 import NewTask from "@/components/NewTask.vue";
 import { useTaskStore } from "../stores/task.js";
 import TaskItem from "../components/TaskItem.vue";
-import { ref, getCurrentInstance } from "vue";
+import { ref } from "vue";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
-const instance = getCurrentInstance();
 
 // we define user store inside a const
 const taskStore = useTaskStore();

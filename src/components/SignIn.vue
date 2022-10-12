@@ -104,7 +104,6 @@ const buttonText = "Register now";
 // Input Fields
 const email = ref("");
 const password = ref("");
-console.log(email.value);
 
 // Error Message
 const errorMsg = ref("");
