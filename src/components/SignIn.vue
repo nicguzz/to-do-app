@@ -142,7 +142,7 @@ const signIn = async () => {
 async function signInWithGoogle() {
   try {
     // calls the user store and send the users info to backend to logIn
-    await useUserStore().signInWithGoogle();
+    await useUserStore().signInGoogle();
 
     // redirects user to the homeView
   } catch (error) {
