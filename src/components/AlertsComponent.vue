@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="app" class="container">
     <h1 class="h1">{{ msg }}</h1>
     <h3>{{ description }}</h3>
@@ -88,4 +88,4 @@ export const alerts = defineComponent({
     },
   },
 });
-</script>
+</script> -->
