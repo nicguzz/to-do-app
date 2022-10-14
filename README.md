@@ -92,3 +92,9 @@ _Done:_
 - Tried to implement Google Auth signin, but could not make it work.
 - Tried to implement Sweetalert2, but could not make it work either.
 - I spent the last 2 days trying to make these 2 features work, but something was failing, I decided to drop these for the moment.
+
+## **Oct 13**
+
+_Done:_
+
+- Prepared Slides for this presentation
