@@ -59,6 +59,8 @@
 
 <script setup>
 import { ref } from "vue";
+import Swal from "sweetalert2";
+
 const props = defineProps(["taskData"]);
 // BOOLEAN TO HIDE/SHOW THE INPUT  FOR EDIT
 let editInput = ref(false);
@@ -86,12 +88,11 @@ function toggleEdit() {
   editDescription.value = props.taskData.description;
 }
 
-let errorMessage = ref("");
 let errorContainer = ref(false);
 
 function errorhandling() {
   errorContainer.value = !errorContainer.value;
-  errorMessage.value = "It cant be empty";
+  Swal.fire("Title can not be empty");
 }
 
 function edit() {

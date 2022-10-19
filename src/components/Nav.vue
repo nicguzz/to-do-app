@@ -8,7 +8,7 @@
       <h2 class="nav-time">{{ time }}</h2>
       <div class="nav-logout-box" id="nav-content">
         <p class="usernav">{{ username }}</p>
-        <button @click="signout" class="signout">Log Out</button>
+        <button @click="logOut" class="signout">Log Out</button>
       </div>
     </div>
   </nav>
@@ -16,6 +16,8 @@
 
 <script setup>
 import { ref } from "vue";
+import Swal from "sweetalert2";
+
 import { useUserStore } from "../stores/user.js";
 import { useRouter } from "vue-router";
 import moment from "moment";
@@ -26,6 +28,22 @@ const redirect = useRouter();
 const userStore = useUserStore();
 const time = moment().format("LLL");
 const username = userStore.user.email.split("@")[0];
+const logOut = () => {
+  Swal.fire({
+    title: `Logout from ${username} ?`,
+    text: "",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, logout!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Logged out!");
+      signout();
+    }
+  });
+};
 
 async function signout() {
   // function that signs out user

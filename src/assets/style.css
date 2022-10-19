@@ -188,7 +188,7 @@ SIGNIN
 /* ---------------------------------------------------------TASKITEM----------------------------------- */
 
 .tasks {
-  @apply min-h-full  justify-center md:mx-10 mx-2 gap-2 grid gap-4 lg:grid-cols-3  lg:grid-rows-3 grid-cols-1 grid-rows-1;
+  @apply min-h-full  justify-center md:mx-10 mx-2 gap-2 grid gap-4 lg:grid-cols-3  lg:grid-rows-1 grid-cols-1 grid-rows-1;
 }
 
 .tasks-td {
