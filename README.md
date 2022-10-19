@@ -2,7 +2,7 @@
 
 Demo: https://to-do-app-nicguzz.vercel.app/
 
- <img src="https://res.cloudinary.com/dbmzbapuj/image/upload/v1666183018/Screenshot_2022-10-19_at_14.36.50_bzxqsa.png" width="250"/>
+ <img src="https://res.cloudinary.com/dbmzbapuj/image/upload/v1666183018/Screenshot_2022-10-19_at_14.36.50_bzxqsa.png" width="500"/>
 
 ## Important
 
