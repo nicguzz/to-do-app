@@ -12,6 +12,16 @@ $ npm install
 $ npm run dev
 ```
 
+```sh
+# installed dependencies
+- pinia
+- sweetalert2
+- supabase
+- vite
+- tailwindcss
+
+```
+
 ### To Do App
 
 ## **Oct 4**
