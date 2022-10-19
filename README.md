@@ -98,3 +98,4 @@ _Done:_
 _Done:_
 
 - Prepared Slides for this presentation
+- SweetAlert2 added
