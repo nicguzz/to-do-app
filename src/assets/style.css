@@ -283,7 +283,7 @@ SIGNIN
 }
 
 .apply-edit {
-  @apply bg-blue-500 border mt-2 px-2 text-white rounded-2xl;
+  @apply bg-blue-500 border mt-2 px-2 text-white rounded-2xl w-full h-10;
 }
 /* ---------------------------------------------------------FOOTER----------------------------------- */
 .footer {
