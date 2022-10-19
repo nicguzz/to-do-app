@@ -1,27 +1,15 @@
 # Iron cHeck - To Do App
 
-Demo: https://to-do-app-nicguzz.vercel.app/
+Deployment: https://to-do-app-nicguzz.vercel.app/
 
  <img src="https://res.cloudinary.com/dbmzbapuj/image/upload/v1666183018/Screenshot_2022-10-19_at_14.36.50_bzxqsa.png" width="500"/>
 
-## Important
-
-## Project Setup
-
 ```sh
-npm install
-```
+# install dependencies
+$ npm install
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+# serve with hot reload at localhost:3000
+$ npm run dev
 ```
 
 ### To Do App
